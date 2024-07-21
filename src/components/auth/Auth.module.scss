@@ -1,0 +1,168 @@
+.wrapperLogin {
+  position: relative;
+  background: linear-gradient(
+      to bottom,
+      rgba($color: #000, $alpha: 0.75),
+      rgba($color: #fff, $alpha: 0.2)
+    ),
+    url("../../assets/experts-in-tall-buildings-burohappold_getty.jpg")
+      no-repeat;
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.wrapperForm {
+  position: absolute;
+  border-radius: 4px;
+  display: block;
+  padding: 24px;
+  height: 550px;
+  width: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  &::after {
+    content: "";
+    display: none;
+    box-sizing: border-box;
+  }
+
+  &::before {
+    content: "";
+    display: none;
+    box-sizing: border-box;
+  }
+}
+
+// Effect Input:
+
+.floating-label {
+  position: relative;
+  label {
+    position: absolute;
+    color: #535f6b;
+    font-size: 14px;
+    left: 12px;
+    font-weight: 400;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.25s ease-in-out;
+  }
+}
+
+.floating-input {
+  height: 45px;
+  line-height: 45px;
+  &:not(:placeholder-shown) {
+    color: #535f6b !important;
+  }
+
+  &:focus ~ label {
+    color: #36bfff;
+    top: 0;
+    left: 6px;
+    font-size: 10px;
+    background: #fafbfe;
+    padding: 5px 8px;
+  }
+
+  &:not(:placeholder-shown) ~ label {
+    top: 0;
+    color: #535f6b;
+    left: 6px;
+    font-size: 10px;
+    background: #fafbfe;
+    padding: 5px 8px;
+  }
+}
+
+.form-control {
+  display: block;
+  &:focus {
+    border-color: #36bfff !important;
+    outline: none;
+  }
+}
+
+.button-auth {
+  transition: 0.3s ease-in-out;
+  &:active {
+    box-shadow: 1px 1px 10px #36bfff;
+    transition: 0.1s ease-in-out !important;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #22b9ff;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.hover-link {
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: rgb(8 145 178);
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.custom-input {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 1rem;
+  height: 1.25rem;
+  opacity: 0;
+
+  &:checked ~ .custom-label::before {
+    background-color: #36bfff;
+    border-color: #36bfff;
+    box-shadow: none;
+  }
+
+  &:checked ~ .custom-label::after {
+    background-color: #36bfff;
+    border-color: #36bfff;
+    background-image: url(../../../public/done.svg);
+  }
+}
+
+.custom-label {
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  &::before {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    border-radius: 8px;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    background: no-repeat 50% / 50% 50%;
+    border-radius: 8px;
+    transition: background-color 0.15s ease-in-out;
+  }
+}

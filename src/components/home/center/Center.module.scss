@@ -1,0 +1,47 @@
+.wrapper-actions-poster {
+  border-radius: 8px;
+  background-color: #f3f3f3;
+  padding: 12px;
+}
+
+.btn-onModal {
+  padding: 0 12px;
+  border-radius: 4px;
+  align-content: center;
+  background-color: #c9c9c9;
+  margin-left: 1rem;
+  width: 100%;
+  transition: ease-in 0.2s;
+  &:hover {
+    transition: ease-out 0.2s;
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+}
+
+.line-break {
+  background-color: #8d8d8d;
+  width: 100%;
+  padding: 0.5px 0;
+  margin: 24px 0 18px 0;
+}
+
+.grid-col-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 33.333%);
+}
+
+.btn-action {
+  line-height: 24px;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 8px 0;
+  transition: ease-in 0.2s;
+  display: flex;
+  align-items: center;
+  &:hover {
+    transition: ease-out 0.2s;
+    background-color: #e2e2e2;
+    cursor: pointer;
+  }
+}

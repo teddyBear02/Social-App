@@ -1,0 +1,41 @@
+.logo {
+  display: flex;
+  flex: 0.75;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-icon-action {
+  color: #fff;
+}
+
+.middle-nav {
+  display: flex;
+  flex: 1.25;
+  .icon-wrapper {
+    padding: 8px 42px;
+    transition: ease-in 0.2s;
+    border-radius: 4px;
+    height: 100%;
+    margin: 0 8px;
+    &:hover {
+      transition: ease-in 0.2s;
+      background-color: rgba($color: #858484, $alpha: 0.8);
+      cursor: pointer;
+    }
+  }
+}
+
+.end-nav {
+  display: flex;
+  flex: 0.25;
+  align-items: center;
+  .icon-end-nav {
+    margin: 0 12px;
+    font-size: 24px;
+  }
+}
+.icons {
+  font-size: 28px;
+  color: #fff;
+}
