@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { AuthState } from '@/constants/auth'
+import { AuthState } from '@/model'
 import { signUp, login, logout } from './auth.actions'
+import { clearAuthData, saveAuthData } from '@/helpers/auth.helper'
 
 export const initialState : AuthState = {
   isAuthenticated: false,
@@ -42,21 +43,17 @@ export const authSlice = createSlice({
       .addCase(login.pending , (state)=> {
         state.loading = true
         state.isAuthenticated = false
-        state.loading = true
       }) 
 
-      .addCase(login.fulfilled , (state , action)=> {
+      .addCase(login.fulfilled , (state , { payload })=> {
         state.loading = false
         state.isAuthenticated = true
-        state.user = action.payload
-        state.loading = false
-
+        state.user = payload.result 
       }) 
 
       .addCase(login.rejected , (state)=> {
-        state.loading = true
-        state.isAuthenticated = false
         state.loading = false
+        state.isAuthenticated = false
       })
       
     builder  
@@ -67,12 +64,11 @@ export const authSlice = createSlice({
 
       .addCase(logout.fulfilled , (state , action)=> {
         state.loading = false
-        state.isAuthenticated = true
-        state.user = action.payload
+        clearAuthData()
       }) 
 
       .addCase(logout.rejected , (state)=> {
-        state.loading = true
+        state.loading = false
         state.isAuthenticated = false
       })
   }

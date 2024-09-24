@@ -1,14 +1,15 @@
 import React from "react";
-import type { AppProps } from "next/app";
 import "@/styles/globals.scss";
-import { Provider } from "react-redux";
-import { store } from "@/store/store";
 import { ProviderContext } from "@/context/ProviderContext";
 import { useEffect, useState } from "react";
 import { ConfigProvider } from "antd/lib";
+import StoreProvider from "@/store/StoreProvider";
+import { AppPropsWithLayout } from "@/model";
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const [loadLib, setLoadLib] = useState<boolean>(false);
+
+  const getLayout = Component.getLayout ?? ((page) => page);
 
   useEffect(() => {
     setLoadLib(false);
@@ -18,13 +19,13 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <Provider store={store}>
+    <StoreProvider>
       <ConfigProvider>
         <ProviderContext>
-          <Component {...pageProps} />
+          {getLayout(<Component {...pageProps} />)}
         </ProviderContext>
       </ConfigProvider>
-    </Provider>
+    </StoreProvider>
   );
 };
 

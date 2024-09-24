@@ -13,6 +13,7 @@ const icons = [
   {
     content: "User's name",
     icon: <Avatar />,
+    url: "/profile/posts",
   },
 
   {

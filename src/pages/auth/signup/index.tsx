@@ -1,23 +1,15 @@
-import {
-  AuthWrapper,
-  FormSignUp,
-  FailedMessage,
-  SucceedMeassage,
-} from "@/components";
-import { GlobalContext } from "@/context/ProviderContext";
-import { useContext } from "react";
+import { AuthLayout, FormSignUp } from "@/components";
+import useContextGlobal from "@/hooks/useContextGlobal";
 
 const SignUp = () => {
-  const { isFailed, isSuccessed } = useContext(GlobalContext);
+  const {} = useContextGlobal();
 
   return (
     <>
       <title>Sign Up</title>
-      <AuthWrapper>
-        {isSuccessed ? <SucceedMeassage message="Sign up succeed" /> : null}
-        {isFailed ? <FailedMessage msg="Sign up failed" /> : null}
+      <AuthLayout>
         <FormSignUp />
-      </AuthWrapper>
+      </AuthLayout>
     </>
   );
 };

@@ -1,0 +1,105 @@
+.wrapper-posts {
+  padding: 0 15.25rem;
+  margin-top: 16px;
+}
+.left-posts {
+  .intro,
+  .photos,
+  .friends {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .intro {
+    .bio-wrapper,
+    .details-wrapper,
+    .edit-featured-wrapper {
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .input-bio,
+    .bio-decs {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .bio-decs,
+    .btn-intro,
+    .header-intro {
+      width: 100%;
+    }
+  }
+
+  .photos {
+  }
+
+  .friends {
+  }
+}
+
+.background-color {
+  background-color: #585858;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.title-span {
+  font-size: 20px;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.see-all-btns {
+  padding: 8px 8px;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: ease-out 0.2s;
+  font-weight: 400;
+  color: rgb(80, 178, 253);
+  &:hover {
+    background-color: rgba($color: #797979, $alpha: 1);
+    transition: ease-in 0.2s;
+    cursor: pointer;
+  }
+}
+
+.btn-posts-filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.style-view-posts {
+  padding: 8px 0;
+  border-radius: 8px;
+  &:hover {
+    background-color: #ccc;
+    cursor: pointer;
+  }
+}
+.is-active {
+  color: rgba(58, 157, 255, 0.888);
+  border-bottom: solid rgba(58, 157, 255, 0.888);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.line {
+  background-color: #ccc;
+  height: 1px;
+}
+
+.post-render {
+  background-color: #585858;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 24px;
+  padding: 16px;
+}

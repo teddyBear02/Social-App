@@ -1,11 +1,11 @@
-import { AuthWrapper } from "@/components";
+import { AuthLayout } from "@/components";
 const ForgetPassword = () => {
   return (
     <>
       <title>Forget password</title>
-      <AuthWrapper>
+      <AuthLayout>
         <h1>Forget password page !</h1>
-      </AuthWrapper>
+      </AuthLayout>
     </>
   );
 };

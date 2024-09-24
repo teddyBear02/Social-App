@@ -6,6 +6,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { IoVideocam } from "react-icons/io5";
 import { FaRegImage } from "react-icons/fa6";
 import { FaFaceGrinWide } from "react-icons/fa6";
+
 const cx = classNames.bind(styles);
 
 type Props = {

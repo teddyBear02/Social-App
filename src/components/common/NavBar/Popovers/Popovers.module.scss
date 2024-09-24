@@ -1,0 +1,48 @@
+.wrapper-popover {
+  padding: 12px 8px;
+  width: 350px;
+}
+
+// Popover avatar:
+
+.header-avatar {
+  box-shadow: 0.5px 0.5px 4px rgba($color: #000000, $alpha: 0.45);
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 1rem;
+}
+
+.hover-box {
+  transition: ease-in 0.2s;
+  border-radius: 4px;
+  padding: 8px 12px;
+  &:hover {
+    background-color: #ccc;
+    transition: ease-in 0.2s;
+    cursor: pointer;
+  }
+}
+
+.line {
+  margin: 4px 0;
+}
+
+.setting-avatar {
+  margin-bottom: 4px;
+  height: 48px;
+  padding: 4px;
+  transition: ease-in 0.2s;
+  border-radius: 4px;
+  &:hover {
+    background-color: #ccc;
+    transition: ease-in 0.2s;
+    cursor: pointer;
+  }
+}
+
+.arrow-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,7 +1,6 @@
 import { Card } from "antd/lib";
 import classNames from "classnames/bind";
 import styles from "./Story.module.scss";
-import Image from "next/image";
 
 const cx = classNames.bind(styles);
 

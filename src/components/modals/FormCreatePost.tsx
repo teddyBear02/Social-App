@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 type FormDataPropsType = {
   form: FormInstance<any>;
-  onFinish?: (v: any) => void;
+  onFinish?: (d: any) => void;
 };
 
 const cx = classNames.bind(styles);

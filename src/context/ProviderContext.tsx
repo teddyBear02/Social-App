@@ -7,24 +7,20 @@ import { AppDispatch, RootState } from "@/store/store";
 import { logout } from "@/store/auth/auth.actions";
 
 interface interfaceContext {
-  isFailed: boolean;
-  isSuccessed: boolean;
   isLoading: boolean;
   isOpenPost: boolean;
-  setIsFailed: React.Dispatch<SetStateAction<boolean>>;
-  setIsSuccessed: React.Dispatch<SetStateAction<boolean>>;
+  idUser: string;
+  setIdUser: React.Dispatch<SetStateAction<string>>;
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
   setIsOpenPost: React.Dispatch<SetStateAction<boolean>>;
-  handleLogout: React.MouseEventHandler;
+  handleLogout: () => void;
 }
 
 const initalContext = {
-  isFailed: false,
-  isSuccessed: false,
   isLoading: false,
   isOpenPost: false,
-  setIsFailed: () => null,
-  setIsSuccessed: () => null,
+  idUser: "",
+  setIdUser: () => null,
   setIsLoading: () => null,
   setIsOpenPost: () => null,
   handleLogout: () => null,
@@ -42,14 +38,14 @@ export const ProviderContext = ({
   const dispatch: AppDispatch = useDispatch();
 
   const user = useSelector((state: RootState) => state.auth.user);
+
   const [isOpenPost, setIsOpenPost] = useState<boolean>(
     initalContext.isOpenPost
   );
+
+  const [idUser, setIdUser] = useState<string>(initalContext.idUser);
+
   const [isLoading, setIsLoading] = useState<boolean>(initalContext.isLoading);
-  const [isFailed, setIsFailed] = useState<boolean>(initalContext.isFailed);
-  const [isSuccessed, setIsSuccessed] = useState<boolean>(
-    initalContext.isSuccessed
-  );
 
   const handleLogout = async () => {
     const res = await dispatch(logout());
@@ -58,26 +54,20 @@ export const ProviderContext = ({
       router.push("/auth");
     }, 2000);
 
-    console.log(res);
-
     if (res.type == "auth/logout/fulfilled") {
       Cookies.remove("Token");
-      // Cookies.set("connect.sid");
-      Cookies.remove("Session");
     }
   };
 
   const valueContext = {
-    isFailed,
-    setIsFailed,
-    isSuccessed,
-    setIsSuccessed,
     handleLogout,
     isLoading,
     setIsLoading,
     isOpenPost,
     setIsOpenPost,
     user,
+    idUser,
+    setIdUser,
   };
 
   return (

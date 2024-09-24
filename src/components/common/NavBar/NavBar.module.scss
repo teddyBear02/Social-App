@@ -1,8 +1,15 @@
-.logo {
+.begin-nav {
   display: flex;
   flex: 0.75;
   align-items: center;
   height: 100%;
+  .logo {
+    color: #fff;
+    font-size: 38px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .nav-icon-action {
@@ -38,4 +45,14 @@
 .icons {
   font-size: 28px;
   color: #fff;
+}
+
+.isOnPage {
+  color: rgb(48, 155, 255);
+}
+
+.icon-avatar {
+  &:hover {
+    cursor: pointer;
+  }
 }

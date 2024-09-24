@@ -5,13 +5,12 @@
 
 
 //export auth login components: 
-export { default as AuthWrapper } from './auth/AuthWrapper';
+export { default as AuthLayout } from './auth';
 export { default as FormLogin } from './auth/login/FormLogin'
 export { default as FormSignUp } from './auth/signup/FormSignUp'
 
 
 //export commons components: 
-export { default as DashBoard } from './common/DashBoard'
 export { default as NavBar } from './common/NavBar/NavBar'
 
 //export messages components: 
